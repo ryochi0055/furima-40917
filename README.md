@@ -25,14 +25,15 @@
 
 | Column             | Type        | Options     |
 | -------------------| ------------| ----------- |
+| amount             | integer     | null:false  |
 | item_name          | string      | null:false  |
 | explanation        | text        | null:false  |
 | category_id        | integer     | null:false  |
 | situation_id       | integer     | null:false  |
-| Shipping_fee_id    | integer     | null:false  |
-| Shipping_source_id | integer     | null:false  |
-| Shipping_date_id   | integer     | null:false  |
-| user         | references  | null: false, foreign_key: true |
+| shipping_fee_id    | integer     | null:false  |
+| shipping_source_id | integer     | null:false  |
+| shipping_date_id   | integer     | null:false  |
+| user               | references  | null: false, foreign_key: true |
 
 ## Association
 
@@ -45,23 +46,23 @@
 | Column       | Type        | Options     |
 | -------------| ------------| ----------- |
 | user         | references  | null: false, foreign_key: true |
-| item         |references  | null: false, foreign_key: true |
+| item         | references  | null: false, foreign_key: true |
 
 ## Association
 
 - belongs_to :item
 - belongs_to :user
-- has_one :Shipping_pieces_of_information
+- has_one :shipping_addresses
 
-## Shipping_pieces_of_information テーブル
+## shipping_addresses テーブル
 
 | Column           | Type     | Options     |
 | -----------------| ---------| ----------- |
 | post_code        | string   | null: false |
 | prefecture_id    | integer  | null: false |
-| Municipality     | text     | null: false |
-| street_address   | text     | null: false |
-| building         | text     |
+| municipality     | string   | null: false |
+| street_address   | string   | null: false |
+| building         | string   |
 | telephone_number | string   | null: false |
 | purchase_record  | references  | null: false, foreign_key: true |
 ## Association
