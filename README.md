@@ -31,7 +31,7 @@
 | category_id        | integer     | null:false  |
 | situation_id       | integer     | null:false  |
 | shipping_fee_id    | integer     | null:false  |
-| shipping_source_id | integer     | null:false  |
+| prefecture_id      | integer     | null:false  |
 | shipping_date_id   | integer     | null:false  |
 | user               | references  | null: false, foreign_key: true |
 
@@ -52,7 +52,7 @@
 
 - belongs_to :item
 - belongs_to :user
-- has_one :shipping_addresses
+- has_one :shipping_address
 
 ## shipping_addresses テーブル
 
