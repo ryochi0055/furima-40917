@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'items/index'
   root 'items#index'
   get 'sessions/new'
-  resources :items ,only: [:index, :new, :create]
+  resources :items ,only: [:index, :new, :create, :show]
     
 
 
