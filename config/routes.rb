@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   get 'items/index'
   root 'items#index'
   get 'sessions/new'
-  resources :items 
+  resources :items do
+   resources :orders , only: [:index, :create]
+  end
+
+end
+
     
 
 
@@ -13,4 +18,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-end
+

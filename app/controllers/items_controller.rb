@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @purchase_form = PurchaseRecordShippingAddress.new
     @item = Item.new
   end
 
