@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @purchase_form = PurchaseRecordShippingAddress.new
     @item = Item.new
   end
 
@@ -25,6 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if current_user.id != @item.user_id || @item.purchase_record.present?
   end
 
   def update
